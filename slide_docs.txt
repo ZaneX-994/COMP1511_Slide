@@ -1,0 +1,82 @@
+[COMP1511 Extension Work]
+
+Write a summary of how you made the changes that you did:
+
+[E1:Summary] {{{
+I changed map[][] into a map[][][] which can help store night realm. 
+
+Almost every function was added one more aegument 'n_realm' which to determine
+day and night.
+
+The structure of the main function is basiclly the same. I have changed the check_map
+into a nested statements since there is more than one map needs to be checked.
+
+I found when the blocks in night realm are cleared, thre will be no need to change
+day and night. So the check_night function was created to check if the night is empty.
+
+I wrote two tests, which test for:
+-the way the map is shifting after night blocks are cleared; as well as
+-the way the map is shifting after day blocks are cleared 
+}}}
+
+Write two tests to test your implementation of Extension 1 ("Night Realm").
+
+[E1:Test 1] {{{
+3
+7 7 1
+7 8 1
+7 7 -1
+3
+2
+3
+3
+}}}
+[E1:Test 2] {{{
+3
+7 7 1
+7 8 -1
+7 8 -1
+2
+3
+3
+}}}
+
+===========================================================================
+
+Write a summary of how you made the changes that you did:
+
+[E2:Summary] {{{
+To split the laser, I add one function called split_laser to achieve the goal.
+
+Since the initial power of the laser is 4, I found the split laser will only be 
+able to meet one another mirror in each direction. So there is a 'else if' condition 
+for it.
+
+Also, through the reference I found the split laser will not cause tnt block to 
+explode. But the tnt block will absorb all of the energy the split laser has, which
+means there will not be further movement of laser after meeting tnt block. So the 
+ciatuation of destory tnt block needs to be considered in a 'if' statement.
+
+Considering all the information given above, I wrote two tests:
+-tesing if the split laser will split a third time; as well as
+-tesing if the split laser can go through the tnt block
+}}}
+
+Write two tests to test your implementation of Extension 2 ("Mirror Blocks").
+
+[E2:Test 1] {{{
+14
+5 6 2 5 7 2 5 8 2
+6 6 2 6 7 2 6 8 2
+7 7 2 7 8 2
+8 6 2 8 7 2 8 8 2
+9 6 2 9 7 2 9 8 2
+2
+}}}
+[E2:Test 2] {{{
+8
+5 6 1 5 7 1 5 8 1
+6 6 1 6 7 5 6 8 1
+7 7 2 7 8 2
+2
+}}}
